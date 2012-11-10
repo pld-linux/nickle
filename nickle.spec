@@ -1,17 +1,24 @@
 Summary:	Desk calculator language, similar to C
 Summary(pl.UTF-8):	Język kalkulatora biurkowego podobny do C
 Name:		nickle
-Version:	2.76
+Version:	2.77
 Release:	1
 License:	MIT
 Group:		Development/Languages
 Source0:	http://nickle.org/release/%{name}-%{version}.tar.gz
-# Source0-md5:	c432569de6cfd6e2867c5f2804041a4c
+# Source0-md5:	22f9775f069be403d110c72c8e888a55
+Patch0:		%{name}-doc.patch
 URL:		http://nickle.org/
 BuildRequires:	bison
+BuildRequires:	docbook-dtd41-sgml
+BuildRequires:	docbook-style-dsssl
+BuildRequires:	docbook-utils
 BuildRequires:	flex
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
+# mathpazo/fplmr.tfm
+BuildRequires:	texlive-fonts-other
+BuildRequires:	texlive-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,6 +54,7 @@ tekstowo, takich jak AWK czy PERL.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
@@ -61,12 +69,15 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}
 mv -f $RPM_BUILD_ROOT%{_datadir}/nickle/examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
+# packaged as %doc
+%{__rm} $RPM_BUILD_ROOT%{_docdir}/nickle/nickle-tutorial.pdf
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog NEWS README README.name TODO
+%doc AUTHORS COPYING ChangeLog NEWS README README.name TODO doc/tutorial/nickle-tutorial.pdf
 %attr(755,root,root) %{_bindir}/nickle
 %{_includedir}/nickle
 %{_datadir}/nickle
