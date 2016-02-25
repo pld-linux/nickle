@@ -18,6 +18,7 @@ BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
 # mathpazo/fplmr.tfm
 BuildRequires:	texlive-fonts-other
+BuildRequires:	texlive-jadetex
 BuildRequires:	texlive-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
