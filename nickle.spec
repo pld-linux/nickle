@@ -20,6 +20,8 @@ BuildRequires:	readline-devel
 BuildRequires:	texlive-fonts-other
 BuildRequires:	texlive-jadetex
 BuildRequires:	texlive-latex
+# T2Acmr.fd
+BuildRequires:	texlive-latex-cyrillic
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
