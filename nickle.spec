@@ -15,6 +15,7 @@ BuildRequires:	docbook-utils
 BuildRequires:	flex
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
+BuildRequires:	texlive-fonts-jknappen
 # mathpazo/fplmr.tfm
 BuildRequires:	texlive-fonts-other
 BuildRequires:	texlive-jadetex
