@@ -2,7 +2,7 @@ Summary:	Desk calculator language, similar to C
 Summary(pl.UTF-8):	Język kalkulatora biurkowego podobny do C
 Name:		nickle
 Version:	2.84
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Languages
 Source0:	http://nickle.org/release/%{name}-%{version}.tar.gz
